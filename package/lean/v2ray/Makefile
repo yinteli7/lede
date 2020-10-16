@@ -9,13 +9,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=v2ray
-PKG_VERSION:=4.25.1
+PKG_VERSION:=4.31.0
 PKG_RELEASE:=1
 PKG_BUILD_DIR:=$(BUILD_DIR)/v2ray-core-$(PKG_VERSION)
 
 PKG_SOURCE:=v2ray-core-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://codeload.github.com/v2fly/v2ray-core/tar.gz/v$(PKG_VERSION)?
-PKG_HASH:=e6fd18d556ea52eb154eb4857759a75be4d3d77053e4ba29f9d2820763a3ca52
+PKG_HASH:=4e475c700863320b92689cb36ef993133e9c799375bbfc4a2811da2283c3673f
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
@@ -69,7 +69,7 @@ include $(TOPDIR)/feeds/packages/lang/golang/golang-package.mk
 
 define Package/$(PKG_NAME)
   TITLE:=A platform for building proxies
-  URL:=https://www.v2ray.com
+  URL:=https://www.v2fly.org
   SECTION:=net
   CATEGORY:=Network
   SUBMENU:=Project V
@@ -231,7 +231,7 @@ GEOIP_VER:=latest
 GEOIP_FILE:=geoip-$(GEOIP_VER).dat
 
 define Download/geoip.dat
-  URL:=https://github.com/v2ray/geoip/releases/$(GEOIP_VER)/download
+  URL:=https://github.com/v2fly/geoip/releases/$(GEOIP_VER)/download
   URL_FILE:=geoip.dat
   FILE:=$(GEOIP_FILE)
   HASH:=skip
@@ -241,7 +241,7 @@ GEOSITE_VER:=latest
 GEOSITE_FILE:=geosite-$(GEOSITE_VER).dat
 
 define Download/geosite.dat
-  URL:=https://github.com/v2ray/domain-list-community/releases/$(GEOSITE_VER)/download
+  URL:=https://github.com/v2fly/domain-list-community/releases/$(GEOSITE_VER)/download
   URL_FILE:=dlc.dat
   FILE:=$(GEOSITE_FILE)
   HASH:=skip

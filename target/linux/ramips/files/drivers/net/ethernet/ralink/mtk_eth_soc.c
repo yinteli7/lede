@@ -564,7 +564,7 @@ static inline u32 fe_empty_txd(struct fe_tx_ring *ring)
 	barrier();
 	return (u32)(ring->tx_ring_size -
 			((ring->tx_next_idx - ring->tx_free_idx) &
-			 (ring->tx_ring_size - 1)));
+			 (ring->tx_ring_size - 1)) - 1);
 }
 
 struct fe_map_state {
@@ -1732,7 +1732,7 @@ static struct platform_driver fe_driver = {
 	.probe = fe_probe,
 	.remove = fe_remove,
 	.driver = {
-		.name = "mtk_soc_eth",
+		.name = "ralink_soc_eth",
 		.owner = THIS_MODULE,
 		.of_match_table = of_fe_match,
 	},
